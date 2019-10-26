@@ -4,5 +4,6 @@ import dagger.Component
 
 @Component
 interface CarComponent {
-    val getCar: Car
+    var getCar: Car
+    fun inject(activity: MainActivity)
 }
