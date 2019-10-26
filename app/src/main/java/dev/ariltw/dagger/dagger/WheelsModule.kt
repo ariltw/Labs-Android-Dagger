@@ -1,7 +1,10 @@
-package dev.ariltw.dagger
+package dev.ariltw.dagger.dagger
 
 import dagger.Module
 import dagger.Provides
+import dev.ariltw.dagger.car.Rims
+import dev.ariltw.dagger.car.Tires
+import dev.ariltw.dagger.car.Wheels
 
 @Module
 class WheelsModule {
@@ -20,6 +23,9 @@ class WheelsModule {
 
     @Provides
     fun provideWheels(): Wheels {
-        return Wheels(Rims(), Tires())
+        return Wheels(
+            Rims(),
+            Tires()
+        )
     }
 }

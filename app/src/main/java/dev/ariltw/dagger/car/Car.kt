@@ -1,4 +1,4 @@
-package dev.ariltw.dagger
+package dev.ariltw.dagger.car
 
 import javax.inject.Inject
 
