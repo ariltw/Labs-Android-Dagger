@@ -2,11 +2,15 @@ package dev.ariltw.dagger.dagger
 
 import dagger.Binds
 import dagger.Module
+import dagger.Provides
 import dev.ariltw.dagger.car.DieselEngine
 import dev.ariltw.dagger.car.Engine
 
 @Module
-abstract class DieselEngineModule {
-    @Binds
-    abstract fun provideEngine(engine: DieselEngine): Engine
+class DieselEngineModule(var housepower: Int) {
+
+    @Provides
+    fun provideEngine(): Engine {
+        return DieselEngine(housepower)
+    }
 }
