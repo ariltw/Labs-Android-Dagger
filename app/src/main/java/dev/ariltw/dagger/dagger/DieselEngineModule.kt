@@ -7,7 +7,12 @@ import dev.ariltw.dagger.car.DieselEngine
 import dev.ariltw.dagger.car.Engine
 
 @Module
-class DieselEngineModule(var housepower: Int) {
+class DieselEngineModule(private var housepower: Int) {
+
+    @Provides
+    fun provideHousepower(): Int {
+        return housepower
+    }
 
     @Provides
     fun provideEngine(): Engine {

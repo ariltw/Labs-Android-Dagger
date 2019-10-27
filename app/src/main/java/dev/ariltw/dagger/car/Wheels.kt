@@ -2,6 +2,6 @@ package dev.ariltw.dagger.car
 
 import javax.inject.Inject
 
-class Wheels @Inject constructor(var rim: Rims, var tires: Tires) {
+class Wheels @Inject constructor(private var rim: Rims, private var tires: Tires) {
 
 }

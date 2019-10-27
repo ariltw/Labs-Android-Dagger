@@ -1,17 +1,21 @@
 package dev.ariltw.dagger.car
 
+import java.util.logging.Logger
 import javax.inject.Inject
 
-class Car @Inject constructor(wheels: Wheels) {
-    @Inject lateinit var engine: Engine
-    lateinit var wheels: Wheels
+class Car @Inject constructor(private val wheels: Wheels, private val driver: Driver) {
+    val TAG: String = Car::class.java.simpleName
 
-    fun drive(): Unit {
-
-    }
+    @Inject
+    lateinit var engine: Engine
 
     @Inject
     fun enableRemote(remote: Remote) {
         remote.setListener(this)
+    }
+
+    fun drive() {
+        engine.start()
+        Logger.getLogger(TAG).info("$driver drives $this")
     }
 }

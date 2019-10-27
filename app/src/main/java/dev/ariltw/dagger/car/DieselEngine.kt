@@ -2,7 +2,7 @@ package dev.ariltw.dagger.car
 
 import java.util.logging.Logger
 
-class DieselEngine(val horsepower: Int) : Engine {
+class DieselEngine(private val horsepower: Int) : Engine {
     val TAG: String = DieselEngine::class.java.simpleName
 
     override fun start() {
